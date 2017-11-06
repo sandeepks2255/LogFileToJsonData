@@ -35,11 +35,20 @@ require "json"
 # File.open("json.json","w") do |f|
 # 	f.puts @data
 # end
-
-
+temp = Array[]
+i=0
 contents = File.open("log_on_date.txt","r").read
-puts @data=contents.scan(/\{((\s*?.*?)*?)\}/)
+data=contents.scan(/\{((\s*?.*?)*?)\}/)
+data_array=data.each_slice(1).to_a
+data_array.each do |f|
+	temp<< "{"
+	temp<<f
+	temp<<"}"
+	temp<<"\n"
+end
+
+puts temp
 File.open("json.json","w") do |f|
-	f.puts @data
+	f.puts temp
 end
 
