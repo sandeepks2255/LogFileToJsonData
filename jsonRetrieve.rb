@@ -33,7 +33,7 @@ require "json"
 
 # # data = JSON.parse([lines].to_s)
 # File.open("json.json","w") do |f|
-# 	f.puts @data
+# 	f.puts @dataa
 # end
 temp = Array[]
 i=0
